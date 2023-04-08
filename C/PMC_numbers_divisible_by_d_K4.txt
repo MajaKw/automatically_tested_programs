@@ -1,0 +1,41 @@
+40
+0: LOAD @ 50 // licznik liczb
+1: STORE . 40
+2: LOAD @ 51
+3: SUB . 1
+4: STORE . 41 // liczba d zmniejszona o 1
+5: LOAD . 52 // przesuwanie po tablicy
+6: STORE . 42
+7: LOAD @ 48 // gdy nie ma liczb podzielnych przez d to w 49 jest -1
+8: JZERO . 35 // jump do A ********************
+9: STORE . 48
+10: LOAD @ 40 // B - begin; jesli liczb juz nie ma to stop
+11: JZERO . 34 // jump do stop
+12: STORE . 40
+13: LOAD @ 40 // zmniejsz licznik liczb o 1
+14: SUB . 1
+15: STORE . 40
+16: LOAD * 42
+17: AND @ 41
+18: JZERO . 24 // jump do Z
+19: STORE . 44 // smietnik
+20: LOAD @ 42 // przesun sie na kolejne pole
+21: ADD . 1
+22: STORE . 42
+23: JUMP . 10 // jump do B
+24: STORE . 44 // Z
+25: LOAD @ 48 // + 1 liczba podzielna
+26: ADD . 1
+27: STORE . 48
+28: LOAD @ 42 // adres ostatniej liczby podzielnej przez d
+29: STORE . 49
+30: LOAD @ 42 // przesun sie na kolejne pole
+31: ADD . 1
+32: STORE . 42
+33: JUMP . 10 // jump do B
+34: STOP . 0
+35: STORE . 48 // A
+36: LOAD @ 49 // inicjalizacja na -1
+37: SUB . 1
+38: STORE . 49
+39: JUMP . 10

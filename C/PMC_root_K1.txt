@@ -1,0 +1,40 @@
+39
+0: LOAD . 0   //jesli 0
+1: STORE . 103
+2: LOAD . 1
+3: STORE . 102
+4: LOAD @ 100
+5: SUB @ 103 //AC = m[100] - m[103]
+6: JZERO . 29
+7: ADD @ 103 //AC = m[100]
+8: STORE . 100
+9: LOAD @ 102 //liczymy dalej
+10: ADD @ 103 //AC = m[102] + m[103]
+11: STORE . 103
+12: LOAD @ 101
+13: ADD . 1
+14: STORE . 101
+15: LOAD @ 100
+16: SUB @ 103 //AC = m[100] - m[103]
+17: JZERO . 30
+18: JNEG . 33
+19: ADD @ 103
+20: STORE . 100
+21: LOAD @ 102 //liczymy dalej
+22: ADD . 2 //AC = m[102] + 2
+23: STORE . 102
+24: JUMP . 9
+25: LOAD @ 103
+26: SUB @ 102 //AC = m[103] - m[102]
+27: STORE . 103
+28: LOAD @ 103
+29: STORE . 101
+30: STOP . 0
+31: ADD @ 103
+32: STORE . 103
+33: ADD @ 103 //cofam sie do poprzedniego kwadratu
+34: STORE . 100
+35: LOAD @ 101
+36: SUB . 1
+37: STORE . 101
+38: JUMP . 30

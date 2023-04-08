@@ -1,0 +1,29 @@
+28
+0: LOAD @ 50
+1: STORE . 48 //licznik liczb
+2 : LOAD @ 51
+3: STORE . 49
+4 : LOAD . 52
+5 : STORE . 46 //licznik pola
+6 : LOAD @ 48
+7: SUB . 1
+8 : STORE . 48
+9 : LOAD @ 48
+10: JZER0 . 24 //jesli licznik liczb to 0 jump do A
+11 : STORE . 48 //B
+12 : LOAD @ 49 //jesli mam wiecej to moge xorowac
+13: XOR * 46
+14 : STORE . 49
+15 : LOAD @ 46
+16: ADD . 1
+17 : STORE . 46 // przesuwam sie na kolejne pole
+18 : LOAD @ 48
+19: SUB . 1
+20 : STORE . 48 //zmniejszam licznik liczb
+21 : LOAD @ 48
+22: JZER0 . 27 //jesli zostalo zero to koncze
+23 : JUMP . 11 // po xorowaniu zacznij od nowa w B
+24 : STORE . 48 //A storuje tylko jedna dana mi liczbe
+25 : LOAD @ 51
+26: STORE . 49
+27 : STOP . 0
